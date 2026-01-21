@@ -10,6 +10,7 @@ target/
 
 # Maven Wrapper
 .mvn/wrapper/maven-wrapper.jar
+.mvn/wrapper/maven-wrapper.properties
 
 # =========================
 # Python
@@ -48,25 +49,14 @@ application-dev.properties
 logs/
 
 # =========================
-# Maven
-# =========================
-.mvn/wrapper/maven-wrapper.properties
-
-# =========================
 # Docker
 # =========================
 *.env.*
 docker-compose.override.yml
 
 # =========================
-# Maven Wrapper
-# =========================
-!creditapi/.mvn/wrapper/maven-wrapper.jar
-!creditapi/.mvn/wrapper/maven-wrapper.properties
-
-# =========================================
 # Spring Boot
-# =========================================
+# =========================
 # Spring local secrets (não versionar)
 creditapi/src/main/resources/application-local.yml
 creditapi/src/main/resources/application-local.properties
