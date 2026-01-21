@@ -23,23 +23,22 @@ class CreditRiskInput(BaseModel):
     pay_amt2: float
     pay_amt3: float
 
-# ✅ Resposta do /predict (single)
 class CreditRiskResponse(BaseModel):
     prob_default: float
     risk_label: str
     model_version: str
 
-# ✅ Item enxuto do batch
+# batch
 class CreditRiskItem(BaseModel):
     probability: float
     risk: str
 
-# ✅ Meta do batch
+# Meta do batch
 class BatchMeta(BaseModel):
     model_version: str
     total: int
 
-# ✅ Resposta do /predict/batch (bonita)
+# /predict/batch 
 class CreditBatchResponse(BaseModel):
     meta: BatchMeta
     results: List[CreditRiskItem]
