@@ -14,7 +14,7 @@ app = FastAPI(title="Credit Risk ML Service", version="0.1.0")
 try:
     MODEL = load_model(settings.artifact_path)
 
-    # ✅ override: cria uma cópia com thresholds do projeto
+    # thresholds do projeto
     MODEL = replace(MODEL, thresholds=settings.thresholds)
     LOAD_ERROR = None
 except Exception as e:
