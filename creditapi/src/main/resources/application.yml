@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/creditrisk}
+    username: ${DB_USER:change-me}
+    password: ${DB_PASS:change-me}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  application:
+    name: credit-risk-api
+
+ml:
+  service:
+    base-url: ${ML_BASE_URL:http://localhost:8000}
+
+server:
+  port: ${PORT:8081}

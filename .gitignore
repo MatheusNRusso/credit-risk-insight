@@ -1,0 +1,73 @@
+# =========================
+# Java / Spring Boot
+# =========================
+target/
+*.class
+*.jar
+*.war
+*.ear
+*.log
+
+# Maven Wrapper
+.mvn/wrapper/maven-wrapper.jar
+
+# =========================
+# Python
+# =========================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+
+# =========================
+# IDEs
+# =========================
+.idea/
+.vscode/
+*.iml
+
+# =========================
+# OS
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Environment / Secrets
+# =========================
+.env
+application-local.properties
+application-dev.properties
+
+# =========================
+# Logs
+# =========================
+logs/
+
+# =========================
+# Maven
+# =========================
+.mvn/wrapper/maven-wrapper.properties
+
+# =========================
+# Docker
+# =========================
+*.env.*
+docker-compose.override.yml
+
+# =========================
+# Maven Wrapper
+# =========================
+!creditapi/.mvn/wrapper/maven-wrapper.jar
+!creditapi/.mvn/wrapper/maven-wrapper.properties
+
+# =========================================
+# Spring Boot
+# =========================================
+# Spring local secrets (não versionar)
+creditapi/src/main/resources/application-local.yml
+creditapi/src/main/resources/application-local.properties
+.env
