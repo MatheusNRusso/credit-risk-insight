@@ -30,12 +30,11 @@ public class CreditRiskService {
 
         var responseRisk = mlClient.predict(mlDto);
 
-        var entityRisk = CreditRiskPrediction.builder()
-                .probability(responseRisk.getProbDefault())
-                .risk(responseRisk.getRiskLabel())
-                .modelVersion(responseRisk.getModelVersion())
-                .createdAt(LocalDateTime.now())
-                .build();
+        var entityRisk = CreditRiskPrediction.of(
+                responseRisk.getProbDefault(),
+                responseRisk.getRiskLabel(),
+                responseRisk.getModelVersion()
+        );
 
         repository.save(entityRisk);
         return responseRisk;

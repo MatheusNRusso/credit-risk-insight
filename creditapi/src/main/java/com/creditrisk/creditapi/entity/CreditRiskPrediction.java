@@ -7,10 +7,8 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "credit_risk_predictions")
-@Getter @Setter
+@Getter
 @NoArgsConstructor
-@AllArgsConstructor
-@Builder
 public class CreditRiskPrediction {
 
     @Id
@@ -24,4 +22,23 @@ public class CreditRiskPrediction {
     private String modelVersion;
 
     private LocalDateTime createdAt;
+
+    public CreditRiskPrediction(
+            Double probability,
+            String risk,
+            String modelVersion
+    ) {
+        this.probability = probability;
+        this.risk = risk;
+        this.modelVersion = modelVersion;
+
+    }
+    public static CreditRiskPrediction of(Double probability, String risk, String modelVersion) {
+        return new CreditRiskPrediction(probability, risk, modelVersion);
+    }
+
+    @PrePersist
+    void prePersist() {
+        this.createdAt = LocalDateTime.now();
+    }
 }
